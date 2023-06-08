@@ -34,7 +34,6 @@ RSpec.describe Comment, type: :model do
 
   describe 'methods' do
     it 'should have a method update_comment_counter' do
-      post_comments_counter = @post.comments_counter
       expect(@post.comments_counter).to eq(0)
 
       @comment = Comment.create(post_id: @post.id, author_id: @user.id, text: 'This is a comment')

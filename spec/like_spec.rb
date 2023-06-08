@@ -30,7 +30,6 @@ RSpec.describe Like, type: :model do
 
   describe 'methods' do
     it 'should have a method update_like_counter' do
-      post_likes_counter = @post.likes_counter
       expect(@post.likes_counter).to eq(0)
 
       @like = Like.create(post_id: @post.id, author_id: @user.id)

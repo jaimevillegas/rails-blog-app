@@ -33,7 +33,6 @@ RSpec.describe Post, type: :model do
 
   describe 'methods' do
     it 'should update posts counter' do
-      user_posts_counter = @user.posts_counter
       expect(@user.posts_counter).to eq(0)
 
       @post = Post.create(author_id: @user.id, title: 'Hello, world!', text: 'Hello, world! I am John Doe!')
