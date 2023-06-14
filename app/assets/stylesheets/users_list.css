@@ -17,12 +17,13 @@ a {
   text-decoration: none;
   color: black;
 }
-a>div {
+
+a > div {
   border-radius: 8px;
   box-shadow: 0 0 10px grey;
 }
 
-a>div:hover {
+a > div:hover {
   box-shadow: 0 0 10px black;
 }
 
@@ -43,7 +44,6 @@ a>div:hover {
   margin: 30px;
   border-radius: 8px;
   box-shadow: 0 0 10px grey;
-  /* width: 100%; */
 }
 
 .user-info {
