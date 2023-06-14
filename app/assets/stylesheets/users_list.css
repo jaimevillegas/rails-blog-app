@@ -2,7 +2,6 @@ body {
   background-color: white;
   padding: 10px;
   font-family: 'Roboto', sans-serif;
-
 }
 
 h1 {
@@ -54,5 +53,4 @@ a > div:hover {
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
-
 }
