@@ -1,8 +1,15 @@
-<html>
-  <body>
-    <h1>List of Users</h1>
-    <% @users.each do |item| %>
-    Name: <%= item.name %><br />
+<h1>List of Users</h1>
+<% stylesheet_link_tag 'users_list' %>
+<section class='users'>
+  <% @users.each do |user| %>
+    <%= link_to user_show_path(user.id), class: 'nav-link' do %>
+      <div class='user-card'>
+        <%= image_tag(user.photo) %>
+        <div class='user-info'>
+          <h2 class='user-name'><%= user.name %></h2>
+          <p class= 'user-posts'>Number of Posts: <%= user.posts_counter %></p>
+        </div>
+      </div>
     <% end %>
-  </body>
-</html>
+  <% end %>
+</section>
