@@ -1,3 +1,72 @@
 .user-header {
   margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px grey;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
 }
+
+.user-bio {
+  margin: 20px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px grey;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.user-bio h2 {
+  font-size: 40px;
+}
+
+.user-bio p {
+  font-size: 20px;
+}
+
+.user-posts>h2 {
+  text-align: center;
+  font-size: 50px;
+}
+
+.post-card {
+  margin: 20px;
+  padding: 10px;
+  border-radius: 8px;
+  box-shadow: 0 0 10px grey;
+}
+
+.post-title {
+  font-size: 30px;
+}
+
+.post-likes-comments {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  gap: 60px;
+  align-items: center;
+}
+
+.posts-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.no-posts {
+  text-align: center;
+  font-size: 30px;
+}
+
+.posts-button p {
+  padding: 8px;
+  font-size: 20px;
+  border: 2px solid black;
+  border-radius: 4px;
+  text-align: center;
+  width: max-content;
+}
+
