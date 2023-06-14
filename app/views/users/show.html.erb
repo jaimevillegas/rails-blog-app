@@ -1,10 +1,38 @@
-<html>
-  <body>
-    <h1>Individual User</h1>
-    <%= @user.name %>
-    <%= @user.bio %>
-    <%= @user.photo %>
-    <%= @user.posts_counter %>
+<% stylesheet_link_tag 'individual_user' %>
+<h1>Individual User</h1>
+<section class='user-header'>
+  <%= image_tag(@user.photo) %>
+  <div class='user-info'>
+    <h2 class='user-name'><%= @user.name %></h2>
+    <p class= 'user-posts'>Number of Posts: <%= @user.posts_counter %></p>
+  </div>
+  <div class='user-bio'>
+    <p><%= @user.bio %></p>
+  </div>
+</section>
+  <% if @user.last_posts.any? %>
+    <section class='user-posts'>
+      <h2>Recent Posts</h2>
+      <% @user.last_posts.each do |post| %>
+        <div class='post-card'>
+          <h3 class='post-title'><%= post.title %></h3>
+          <p class='post-text'><%= post.text %></p>
+          <div class='post-likes-comments'>
+            <p class='post-likes'>Likes: <%= post.likes_counter %></p>
+            <p class='post-comments'>Comments: <%= post.comments_counter %></p>
+          </div>
+          <% end %>
+        </div>
+      <% end %>
 
-  </body>
-</html>
+</section>
+
+
+
+
+
+
+<%= @user.name %>
+<%= @user.bio %>
+<%= @user.photo %>
+<%= @user.posts_counter %>
