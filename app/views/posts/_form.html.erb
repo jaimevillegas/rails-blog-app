@@ -1,0 +1,18 @@
+<%= form_with model: @post, url: new_post_path do |form| %>
+  <h1>Add new Post</h1>
+  <div>
+    <%= form.label :title, 'Title: ' %>
+    <%= form.text_field :title, placeholder: 'Title' %>
+    <%= form.label :text, 'Text: ' %>
+    <%= form.text_area :text, placeholder: 'Text' %>
+    <%= form.submit %>
+  </div>
+<% end %>
+
+<% if flash[:alert] %>
+  <p><%= flash[:alert] %></p>
+<% end %>
+
+<div>
+  <%= link_to 'Home', root_path %>
+</div>

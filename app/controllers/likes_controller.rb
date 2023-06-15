@@ -7,5 +7,6 @@ class LikesController < ApplicationController
     else
       flash.now[:alert] = "Like could not be created"
     end
-    redirect_to post_path(params[:user_id])
+    redirect_to "/users/#{@like.author_id}/posts/#{@like.post_id}"
   end
+end
