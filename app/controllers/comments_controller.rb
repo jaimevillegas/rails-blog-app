@@ -11,10 +11,7 @@ class CommentsController < ApplicationController
 
     if @comment.save
       flash[:notice] = "Comment created successfully"
-      # redirect_to user_post_path(params[:post_id])
       redirect_to "/users/#{current_user.id}/posts/#{params[:post_id]}"
-      # redirect_to "/users/#{params[:user_id]}/posts"
-      # redirect_to root_path
     else
       flash.now[:alert] = "Comment could not be created"
       render :new
