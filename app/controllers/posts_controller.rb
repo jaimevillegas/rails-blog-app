@@ -1,16 +1,33 @@
 class PostsController < ApplicationController
   def index
-    @user = User.find_by(id: params[:user_id])
-    @posts = Post.where(author_id: @user.id)
+    @user = User.find(params[:id])
+    @posts = @user.posts
   end
 
   def show
-    @user = User.find(params[:user_id])
+    @post = Post.find(params[:post_id])
+  end
 
-    begin
-      @post = Post.where(author_id: @user.id).find(params[:id])
-    rescue StandardError
-      @post = nil
+  def new
+    @post = Post.new
+  end
+
+  def create
+    @post = Post.new(author_id: current_user.id, title: params[:title], text: params[:text])
+
+    if @post.save
+      flash[:notice] = 'Post created successfully'
+      redirect_to "/users/#{current_user.id}/posts/#{@post.id}"
+
+    else
+      flash.now[:alert] = 'Post could not be created'
+      render :new
     end
+  end
+
+  private
+
+  def post_params
+    params.require(:post).permit(:title, :body)
   end
 end

@@ -7,6 +7,9 @@
     <p class= 'user-posts'>Number of Posts: <%= @user.posts_counter %></p>
   </div>
 </section>
+<div class='create-post'>
+  <%= link_to 'Create new post', new_post_path %>
+</div>
 
 <section class='posts-list'>
   <h2>List of Posts</h2>

@@ -1,0 +1,13 @@
+  <h1>Add new Comment</h1>
+  <div>
+    <%= form_with do |form| %>
+      <%= form.hidden_field :author_id, value: @post.author.id %>
+      <%= form.hidden_field :post_id, value: @post.id %>
+      <%= form.text_area :text, placeholder: 'Text' %>
+      <%= form.submit %>
+    <% end %>
+  </div>
+
+<% if flash[:alert] %>
+  <p><%= flash[:alert] %></p>
+<% end %>
