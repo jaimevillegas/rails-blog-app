@@ -1,0 +1,12 @@
+<%= form_with model: @post, url: user_post_path do |form| %>
+  <h1>Add new Post</h1>
+  <div>
+    <%= form.text_field :title, placeholder: 'Title' %>
+    <%= form.text_area :text, placeholder: 'Text' %>
+  </div>
+  <%= form.submit %>
+<% end %>
+
+<% if flash[:alert] %>
+  <p><%= flash[:alert] %></p>
+<% end %>
