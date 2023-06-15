@@ -11,6 +11,16 @@
   padding: 8px;
 }
 
+.add-comment {
+  font-size: 20px;
+  padding: 10px;
+  border-radius: 4px;
+  margin: auto;
+  margin-top: 50px;
+  width: max-content;
+  border: 1px solid black;
+}
+
 hr {
   width: 50%;
 }

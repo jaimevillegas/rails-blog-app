@@ -1,10 +1,12 @@
-<%= form_with model: @comment, url: new_comment_path do |form| %>
-  <h1>Add new Post</h1>
+  <h1>Add new Comment</h1>
   <div>
-    <%= form.text_area :text, placeholder: 'Text' %>
+    <%= form_with do |form| %>
+      <%= form.hidden_field :author_id, value: @post.author.id %>
+      <%= form.hidden_field :post_id, value: @post.id %>
+      <%= form.text_area :text, placeholder: 'Text' %>
+      <%= form.submit %>
+    <% end %>
   </div>
-  <%= form.submit %>
-<% end %>
 
 <% if flash[:alert] %>
   <p><%= flash[:alert] %></p>
