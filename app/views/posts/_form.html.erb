@@ -1,18 +1,16 @@
-<%= form_with model: @post, url: new_post_path do |form| %>
-  <h1>Add new Post</h1>
-  <div>
-    <%= form.label :title, 'Title: ' %>
-    <%= form.text_field :title, placeholder: 'Title' %>
-    <%= form.label :text, 'Text: ' %>
-    <%= form.text_area :text, placeholder: 'Text' %>
-    <%= form.submit %>
-  </div>
+<% stylesheet_link_tag 'new_post' %>
+<h1>New post</h1>
+<%= form_with do |form| %>
+  <%= form.label :title, 'Title: ' %>
+  <%= form.text_field :title %>
+  <%= form.label :text, 'Content: ' %>
+  <%= form.text_field :text %>
+  <%= form.submit %>
+<% end %>
+<%  @post.errors.full_messages_for(:title).each do |message| %>
+  <p><%= message %></p>
 <% end %>
 
-<% if flash[:alert] %>
-  <p><%= flash[:alert] %></p>
-<% end %>
-
-<div>
+<div class='home-button'>
   <%= link_to 'Home', root_path %>
 </div>

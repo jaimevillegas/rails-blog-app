@@ -1,7 +1,6 @@
-<%= form_with model: @post, url: user_post_path do |form| %>
+<%= form_with model: @comment, url: new_comment_path do |form| %>
   <h1>Add new Post</h1>
   <div>
-    <%= form.text_field :title, placeholder: 'Title' %>
     <%= form.text_area :text, placeholder: 'Text' %>
   </div>
   <%= form.submit %>

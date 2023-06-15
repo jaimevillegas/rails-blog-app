@@ -3,6 +3,14 @@
   font-size: 50px;
 }
 
+.create-post {
+  font-size: 30px;
+  border: 1px solid black;
+  width: max-content;
+  margin: auto;
+  padding: 8px;
+}
+
 hr {
   width: 50%;
 }

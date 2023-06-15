@@ -22,9 +22,3 @@
 <% else %>
   <h1>Post not found</h1>
 <% end %>
-
-<%= form_with url: '/likes/new' do |form| %>
-  <%= form.hidden_field :post_id, value: @post.id %>
-  <%= form.submit 'Add a Like' %>
-<% end %>
-<%= link_to 'Create Comment', "/comment/new/#{@post.id}" %>

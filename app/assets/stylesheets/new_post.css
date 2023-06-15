@@ -1,0 +1,14 @@
+form {
+  width: max-content;
+  margin: auto;
+  font-size: 20px;
+}
+
+.home-button {
+  margin: auto;
+  margin-top: 50px;
+  padding: 10px;
+  font-size: 20px;
+  width: max-content;
+  border: 1px solid black;
+}
