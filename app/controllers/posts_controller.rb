@@ -16,11 +16,11 @@ class PostsController < ApplicationController
     @post = Post.new(author_id: current_user.id, title: params[:title], text: params[:text])
 
     if @post.save
-      flash[:notice] = "Post created successfully"
+      flash[:notice] = 'Post created successfully'
       redirect_to "/users/#{current_user.id}/posts/#{@post.id}"
 
     else
-      flash.now[:alert] = "Post could not be created"
+      flash.now[:alert] = 'Post could not be created'
       render :new
     end
   end

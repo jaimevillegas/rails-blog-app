@@ -10,10 +10,10 @@ class CommentsController < ApplicationController
                            text: params[:text]
 
     if @comment.save
-      flash[:notice] = "Comment created successfully"
+      flash[:notice] = 'Comment created successfully'
       redirect_to "/users/#{current_user.id}/posts/#{params[:post_id]}"
     else
-      flash.now[:alert] = "Comment could not be created"
+      flash.now[:alert] = 'Comment could not be created'
       render :new
     end
   end
