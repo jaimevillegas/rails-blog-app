@@ -8,7 +8,7 @@ RSpec.describe 'users/index', type: :feature do
       Post.create(title: "Post - #{i}", text: 'This is the first post',
                   comments_counter: 5, likes_counter: 0, author_id: @user.id)
     end
-    visit user_posts_path(id: @user.id)
+    visit user_show_path(id: @user.id)
   end
 
   it 'displays user profile photo' do
@@ -24,8 +24,31 @@ RSpec.describe 'users/index', type: :feature do
   end
 
   it "displays the user's first 3 posts" do
-    expect(page).to have_content('Post - 1')
-    expect(page).to have_content('Post - 2')
+    expect(page).to have_content('Post - 4')
     expect(page).to have_content('Post - 3')
+    expect(page).to have_content('Post - 2')
   end
+
+	it 'displays the user bio' do
+		expect(page).to have_content('Alien biologist')
+	end
+
+	it 'displays a button to see all posts' do
+		expect(page).to have_content('See all posts')
+	end
+
+	it 'show all the user posts when the button is clicked' do
+		click_on 'See all posts'
+		expect(page).to have_content('Post - 0')
+		expect(page).to have_content('Post - 1')
+		expect(page).to have_content('Post - 2')
+		expect(page).to have_content('Post - 3')
+		expect(page).to have_content('Post - 4')
+	end
+
+	it 'Redirects to the user posts index page when clicking See all posts' do
+		click_on 'See all posts'
+		expect(page).to have_current_path(user_posts_path(@user.id))
+	end
+
 end
