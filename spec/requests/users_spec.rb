@@ -2,7 +2,7 @@ require 'rails_helper'
 
 RSpec.describe 'Users', type: :request do
   before(:each) do
-    get users_path
+    get users_index_path
   end
 
   describe 'GET /users' do
@@ -32,7 +32,7 @@ RSpec.describe 'Users', type: :request do
   describe 'GET /show' do
     before(:each) do
       @user = User.create(name: 'John Doe', photo: 'https://photo.com', bio: 'I am John Doe')
-      get users_path(@user)
+      get users_index_path(@user)
     end
 
     it 'returns http success' do
