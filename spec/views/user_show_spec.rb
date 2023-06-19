@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rails_helper'
 
 RSpec.describe 'users/index', type: :feature do
@@ -29,26 +31,25 @@ RSpec.describe 'users/index', type: :feature do
     expect(page).to have_content('Post - 2')
   end
 
-	it 'displays the user bio' do
-		expect(page).to have_content('Alien biologist')
-	end
+  it 'displays the user bio' do
+    expect(page).to have_content('Alien biologist')
+  end
 
-	it 'displays a button to see all posts' do
-		expect(page).to have_content('See all posts')
-	end
+  it 'displays a button to see all posts' do
+    expect(page).to have_content('See all posts')
+  end
 
-	it 'show all the user posts when the button is clicked' do
-		click_on 'See all posts'
-		expect(page).to have_content('Post - 0')
-		expect(page).to have_content('Post - 1')
-		expect(page).to have_content('Post - 2')
-		expect(page).to have_content('Post - 3')
-		expect(page).to have_content('Post - 4')
-	end
+  it 'show all the user posts when the button is clicked' do
+    click_on 'See all posts'
+    expect(page).to have_content('Post - 0')
+    expect(page).to have_content('Post - 1')
+    expect(page).to have_content('Post - 2')
+    expect(page).to have_content('Post - 3')
+    expect(page).to have_content('Post - 4')
+  end
 
-	it 'Redirects to the user posts index page when clicking See all posts' do
-		click_on 'See all posts'
-		expect(page).to have_current_path(user_posts_path(@user.id))
-	end
-
+  it 'Redirects to the user posts index page when clicking See all posts' do
+    click_on 'See all posts'
+    expect(page).to have_current_path(user_posts_path(@user.id))
+  end
 end
