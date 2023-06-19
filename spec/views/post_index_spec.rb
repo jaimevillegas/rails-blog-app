@@ -3,7 +3,8 @@ require 'rails_helper'
 RSpec.describe 'posts/index', type: :feature do
   before(:each) do
     @user = User.create(name: 'John Doe', photo: 'https://i.pravatar.cc/300', bio: 'Alien biologist', posts_counter: 1)
-    @first_post = Post.create(title: 'First post', text: 'This is the first post', comments_counter: 5, likes_counter: 0, author_id: @user.id)
+    @first_post = Post.create(title: 'First post', text: 'This is the first post',
+                              comments_counter: 5, likes_counter: 0, author_id: @user.id)
     5.times do |i|
       Comment.create(text: "This is comment ##{i}", author_id: @user.id, post_id: @first_post.id)
     end
@@ -37,5 +38,4 @@ RSpec.describe 'posts/index', type: :feature do
   it 'displays user photo' do
     expect(page).to have_css("img[src*='https://i.pravatar.cc/300']")
   end
-
 end

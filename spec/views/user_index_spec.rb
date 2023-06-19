@@ -20,5 +20,4 @@ RSpec.describe 'users/index', type: :feature do
   it 'displays user profile photo' do
     expect(page).to have_css("img[src*='https://i.pravatar.cc/300']")
   end
-
 end
