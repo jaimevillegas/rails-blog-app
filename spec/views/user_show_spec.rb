@@ -51,4 +51,10 @@ RSpec.describe 'users/index', type: :feature do
     visit user_posts_path(@user.id)
     expect(page).to have_current_path(user_posts_path(@user.id))
   end
+
+  it 'Redirects to the post show page when clicking on a post title' do
+    click_on 'See all posts'
+    click_link('Go to Post', match: :first)
+    expect(page).to have_current_path(user_post_path(@user.id, @user.posts.first.id))
+  end
 end
