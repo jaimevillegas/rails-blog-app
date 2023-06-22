@@ -8,7 +8,7 @@ class Ability
     can :delete, Comment, author: user
 
     return unless user.role == 'admin'
-    
+
     can :delete, Post
     can :delete, Comment
 
