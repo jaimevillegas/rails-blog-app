@@ -14,6 +14,9 @@
               <div class='comment'>
                 <p class='user-comment'><%= comment.author.name %>: </p>
                 <p class='comment-text'><%= comment.text %></p>
+                <% if can? :delete, comment %>
+                  <%= button_to 'Delete Comment' %>
+                <% end %>
               </div>
           <% end %>
         </div>
