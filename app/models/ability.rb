@@ -1,16 +1,14 @@
-# frozen_string_literal: true
-
 class Ability
   include CanCan::Ability
 
   def initialize(user)
-
     user ||= User.new # guest user (not logged in)
 
     can :delete, Post, author: user
     can :delete, Comment, author: user
 
     return unless user.role == 'admin'
+    
     can :delete, Post
     can :delete, Comment
 
