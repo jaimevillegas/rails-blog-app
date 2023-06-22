@@ -5,10 +5,12 @@ class Ability
 
   def initialize(user)
 
+    user ||= User.new # guest user (not logged in)
+
     can :delete, Post, author: user
     can :delete, Comment, author: user
 
-    return unless user.rol == 'admin'
+    return unless user.role == 'admin'
     can :delete, Post
     can :delete, Comment
 

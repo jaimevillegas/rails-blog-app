@@ -21,7 +21,7 @@
             <p class='post-likes'>Likes: <%= post.likes_counter %></p>
             <p class='post-comments'>Comments: <%= post.comments_counter %></p>
             <% if can? :delete, post %>
-              <%= button_to 'Delete Post' %>
+              <%= button_to 'Delete Post', "/posts/#{post.id}", method: :delete %>
             <% end %>
           </div>
         </div>
