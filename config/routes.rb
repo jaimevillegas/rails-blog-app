@@ -18,6 +18,10 @@ Rails.application.routes.draw do
   post '/likes/new', to: 'likes#create', as: 'create_like'
   delete 'posts/:id', to: 'posts#destroy'
   delete 'comments/:id', to: 'comment#destroy'
+
+  get '/api/users/:user_id/posts', to: 'api/posts#index'
+  get '/api/comments/:post_id', to: 'api/comments#index'
+  post '/api/users/:user_id/posts/:post_id/comments', to: 'api/comments#create'
   
   root 'users#index'
   # Defines the root path route ("/")
