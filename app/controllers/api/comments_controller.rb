@@ -18,13 +18,13 @@ class Api::CommentsController < ActionController::Base
                   else
                     'Comment Not Created'
                   end
-        else
+      else
           message = 'Post Not Found'
         end
-      else
+    else
         message = 'User Not Found'
     end
 
-    render json: { message: message }
+    render json: { message: }
   end
 end
